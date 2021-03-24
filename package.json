@@ -1,0 +1,18 @@
+{
+  "name": "fancy-weather",
+  "version": "1.0.0",
+  "description": "Task requirements: \r https://github.com/rolling-scopes-school/tasks/blob/master/tasks/fancy-weather.md <br/>\r My implementation:\r https://larkgronick-fansy-weather.netlify.app/",
+  "main": "index.js",
+  "scripts": {
+    "lint":"eslint ./js",
+    "lint:fix": "eslint ./js --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}

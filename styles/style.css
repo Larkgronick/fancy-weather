@@ -1,0 +1,495 @@
+@font-face{
+    font-family: 'Montserrat-Regular';
+    src: url('../assets/Montserrat-Regular.ttf');
+
+  }
+
+/* main */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	color: #fff;
+    background-color: #1a1a1a;
+    overflow-y: hidden;
+	overflow-x: hidden;
+     
+}
+
+body{
+    font-family: Montserrat-Regular;
+    min-width: 320px;
+    margin: 0 auto;
+
+}
+
+.wrapper{
+    padding: 2%;
+    background-position: 50%;
+    background-size: cover;
+}
+
+/* header */
+
+header{
+    
+	position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-position: 50%;
+    background-size: cover;
+    
+}
+
+.switchers{
+    display: flex;
+	width: 250px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+/* Refresh button */
+
+.buttonload {
+	width: 44px;
+	height: 44px;
+	background: url('../assets/refresh.jpg');
+	background-size: cover;
+	border: none; 
+	border-radius: 4px;
+	color: #fff;
+	font-size: 20px;
+	outline: none;
+
+}
+
+/* select language */
+
+select{
+	display: block;
+    width: 71px;
+    height: 44px;
+    padding: 0 0 0 10px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: Montserrat-Regular, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    background: #858c95;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+
+}
+
+/* Celsius - Fahrenheit switcher */
+
+input[type="radio"] {
+     display: none;
+     
+}
+
+input[type="radio"]:checked + .box {
+     background-color: #858c95;
+     
+}
+
+input[type="radio"]:checked + .box span {
+	 color: white;
+     transform: translateY(8px);
+     
+}
+
+input[type="radio"]:checked + .box span:before {
+	 transform: translateY(0px);
+     opacity: 1;
+     
+}
+
+.box {
+	width: 44px;
+	height: 44px;
+	background-color: #555c66;
+	transition: all 250ms ease;
+	will-change: transition;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+    font-weight: 900;
+
+}
+
+.box:active {
+    transform: translateY(10px);
+     
+}
+
+.box span {
+	position: absolute;
+	transform: translate(0, 30px);
+	left: 0;
+	right: 0;
+	transition: all 300ms ease;
+	font-size: 1.5em;
+	user-select: none;
+    color: #545b66;
+     
+}
+
+.box span:before {
+	 font-size: 1em;
+	 font-family: Montserrat-Regular, sans-serif;
+	 display: block;
+	 transform: translateY(-30px);
+	 opacity: 0;
+	 transition: all 300ms ease-in-out;
+	 font-weight: normal;
+     color: white;
+     
+}
+
+.celsius{
+    border-radius: 4px 0 0 4px;
+
+}
+
+.fahrenheit{
+    border-radius: 0 4px 4px 0;
+
+}
+
+.celsius span:before {
+	content: '\00B0' '\0043';
+     
+}
+
+.fahrenheit span:before {
+    content: '\00B0' '\0046';
+     
+}
+
+/* search */
+
+/*input field*/
+
+.search{
+    display: flex;
+    margin-left: 7px;
+    border-radius: 4px;
+    
+}
+
+input{
+    width: 70%;
+    height: 44px;
+    padding: 0 0 0 15px;
+    font-family: Montserrat-Regular, sans-serif;
+    color: #fff;
+    background: #555c66;
+    border: 1px solid #fff;
+    border-right-width: 0;
+    border-radius: 5px 0 0 5px;
+	outline: none;
+
+}
+
+/* microphone */
+
+.microphone{
+	position: relative;
+    width: 44px;
+    height: 42px;
+    line-height: 50px;
+    text-align: center;
+    background: #555c66;
+    border-color: #fff;
+    border-style: solid;
+	border-width: 1px 0;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    user-select: none;
+    content:url("../assets/microphone_off.png");
+
+}
+
+.search button{
+	width: 100px;
+	height: 44px;
+	position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 44px;
+    font-family: Arial,Helvetica,sans-serif;
+    text-align: center;
+    color: #fff;
+	background: #858c95;
+	border-color: #fff;
+	border-width: 1px 1px 1px 0;
+	border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+	user-select: none;
+	outline: none;
+
+}
+
+.active{
+    width: 44px;
+    height: 42px;
+    content:url("../assets/microphone.png");
+
+}
+
+/* MAIN */
+main{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 320px;
+    max-width: 1440px;
+
+}
+
+/* WEATHER BLOCK */
+
+/* today */
+
+.weather-block{
+    width: 60%;
+    margin: 5% 0 0 3.5%; 
+}
+
+h3{
+    font-size: 40px;
+    padding-bottom: 1%;
+}
+
+.date{
+    font-size: 24px;
+
+}
+
+.degree{
+    font-size: 230px;
+
+}
+
+.info-block{
+    position: relative;
+    display: flex;
+    
+}
+
+.info-block img{
+    width: 120px;
+    height: 120px;
+
+}
+
+.details{
+    width: 800px;
+    padding: 5px;
+
+}
+
+.details div{
+    font-size: 20px;
+    padding: 0.5%;
+
+}
+
+/* three day */
+
+.weather-three-days{
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+#tomorrow, #after-tomorrow, #after-after-tomorrow{
+    padding: 0 2%;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.forecast-day{
+    width: 100%;
+    font-size: 20px;
+
+}
+
+.forecast-degree{
+    font-size: 50px;
+    
+}
+
+.forecast-icon{
+    width: 130px;
+    
+}
+
+/* map */
+
+.map-block{
+    position: relative;
+    margin: 0 auto;
+    
+}
+
+
+#map { 
+    margin: 20% 0;
+    width: 310px;
+    height: 310px;
+    border-radius: 60px; 
+
+}
+
+p{
+    margin-top: 3%;
+    text-align: right;
+    font-size: 24px;
+
+}
+
+@media screen and (max-width: 901px) {
+    html{
+      overflow-y: visible;
+  
+    }
+
+}
+
+@media screen and (max-width: 622px) {
+    .switchers{
+        width: 335px;
+
+    }
+    .search{
+        margin-top: 2%;
+
+    }
+    .info-block{
+        flex-wrap: wrap;
+
+    }
+
+    .side-info{
+        display: flex;
+
+    }
+
+    .weather-three-days{
+        width: 430px;
+
+    }
+
+}
+
+
+@media screen and (max-width: 354px) {
+    .switchers{
+        width: 335px;
+
+    }
+    .search{
+        margin-top: 2%;
+
+    }
+    .info-block{
+        flex-wrap: wrap;
+
+    }
+
+    .side-info{
+        display: flex;
+
+    }
+
+    .weather-three-days{
+        width: 430px;
+
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .switchers{
+        width: 300px;
+    }
+
+    .search{
+        width: 280px;
+    }
+    
+    .weather-three-days{
+        width: 320px;
+
+    }
+
+    h3{
+        font-size: 25px;
+    }
+
+    h4{
+        font-size: 20px;
+    }
+
+    .degree{
+        font-size: 200px;
+    }
+
+    .info-block img {
+        width: 100px;
+        height: 100px;
+
+    }
+
+    .weather-three-days {
+        width: 275px;
+        margin: 15% 0 0 0;
+        padding: 0;
+
+    }
+
+    #tomorrow, #after-tomorrow, #after-after-tomorrow {
+        width: 86px;
+
+    }
+
+    .forecast-day {
+        font-size: 14px;
+
+    }
+
+    
+    .forecast-degree {
+        font-size: 36px;
+
+    }
+
+    .forecast-icon {
+        font-size: 80px;
+
+    }
+
+    #map{
+        width: 265px;
+        height: 265px;
+    }
+
+}
